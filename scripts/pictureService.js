@@ -3,7 +3,7 @@ var pictureService = (function () {
 
         // private
         function timeCheckerForImageChange(){
-            var howHoursAlreadySpentAtWork = workerService.hoursAlreadySpentAtWork();
+            var howHoursAlreadySpentAtWork = workService.hoursAlreadySpentAtWork();
             changingPictureForSpecificAmmountOfHours(howHoursAlreadySpentAtWork);
         }
         

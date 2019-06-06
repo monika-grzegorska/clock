@@ -1,5 +1,5 @@
 
-var workerService = (function () {
+var workService = (function () {
 
         // private
         function hoursAlreadySpentAtWork () {
@@ -41,10 +41,6 @@ var workerService = (function () {
                 $("#overtime-hours-count").html(overtime);
             });
         }
-        // function addOvertimeToYourWorkTime(){
-            
-        // }
-
 
         return {
             

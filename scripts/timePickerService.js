@@ -2,6 +2,11 @@
 var  timePickerService = (function () {
 
         // private
+        function add8HoursAndOvertimeToWorkStartDate () {
+            var basicWorkTime = 8
+            var overtime = workService.chooseLenghtOfOverime
+            return basicWorkTime + overtime
+        }
         function registerTimePicker()
         {
             var timePicker = $(function () {
@@ -14,17 +19,17 @@ var  timePickerService = (function () {
             timePicker.on('change.datetimepicker', function(eventContext){
             
                 var workStartDate          = moment(eventContext.date);
-                var eigthHourslLater       = moment(eventContext.date).add(8, 'hours');
+                var eigthHourslLater       = moment(eventContext.date).add(add8HoursAndOvertimeToWorkStartDate(), 'hours');
             
                 if(workStartDate == undefined || workStartDate == null)
                     return -1;
             
-                workerService.displayWorkStartAndEndTime(workStartDate, eigthHourslLater);
+                workService.displayWorkStartAndEndTime(workStartDate, eigthHourslLater);
             
                 clearInterval(timer);
                 timer = setInterval(function() {   
                     pictureService.timeCheckerForImageChange();  
-                    workerService.timeCheckerFor30minuteAlert(eigthHourslLater);  
+                    workService.timeCheckerFor30minuteAlert(eigthHourslLater);  
                 }, 1000);
             
             });
