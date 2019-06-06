@@ -40,6 +40,7 @@ var workService = (function () {
                 }
                 $("#overtime-hours-count").html(overtime);
             });
+            return overtime
         }
 
         return {

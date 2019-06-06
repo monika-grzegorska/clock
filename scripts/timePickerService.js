@@ -3,9 +3,9 @@ var  timePickerService = (function () {
 
         // private
         function add8HoursAndOvertimeToWorkStartDate () {
-            var basicWorkTime = 8
-            var overtime = workService.chooseLenghtOfOverime
-            return basicWorkTime + overtime
+            var basicWorkTime = 8;
+            var overtime = workService.chooseLenghtOfOverime();
+            return basicWorkTime + overtime;
         }
         function registerTimePicker()
         {
@@ -40,6 +40,7 @@ var  timePickerService = (function () {
 
           // public
           registerTimePicker: registerTimePicker,    
+          add8HoursAndOvertimeToWorkStartDate :add8HoursAndOvertimeToWorkStartDate ,
         };
 
     }());
